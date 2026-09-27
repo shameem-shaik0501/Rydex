@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* 🔧 FIX FULL HEIGHT ISSUE */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Leaflet Container Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 1rem;
+}
+
+/* ========================================================
+   DYNAMIC CINEMATIC VIDEO BACKGROUND & SHOOTING STARS CSS
+   ======================================================== */
+.video-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.video-bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Slight dark overlay keeping UI (headline, search form, buttons) 100% sharp */
+.video-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.35) 0%,
+    rgba(2, 6, 23, 0.45) 50%,
+    rgba(2, 6, 23, 0.85) 85%,
+    rgba(2, 6, 23, 0.96) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Pure CSS Shooting Star Trails in Slow Motion */
+.shooting-star {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(180, 220, 255, 0.7), rgba(255, 255, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85));
+  animation: shootingStarMoveSlow linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shootingStarMoveSlow {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-26deg);
+    opacity: 0;
+    width: 0px;
+  }
+  15% {
+    opacity: 0.95;
+    width: 130px;
+  }
+  75% {
+    opacity: 0.85;
+    width: 170px;
+  }
+  100% {
+    transform: translateX(340px) translateY(170px) rotate(-26deg);
+    opacity: 0;
+    width: 15px;
+  }
+}
+

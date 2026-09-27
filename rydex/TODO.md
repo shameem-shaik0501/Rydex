@@ -1,0 +1,3 @@
+- [x] Update `src/utils/realtimeVerification.js` to fix demo validation logic
+- [x] Run tests to ensure the fix works correctly
+- [x] Fix failing polling timeout test

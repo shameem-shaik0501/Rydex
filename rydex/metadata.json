@@ -1,0 +1,8 @@
+{
+  "name": "Rydex Car Rental",
+  "description": "A modern car rental platform for browsing, booking, and managing vehicle reservations.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
